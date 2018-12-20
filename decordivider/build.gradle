@@ -1,0 +1,22 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.minyushov.bintray'
+
+android {
+	compileSdkVersion 28
+	defaultConfig {
+		minSdkVersion 19
+		targetSdkVersion 28
+	}
+}
+
+bintrayUpload {
+	artifactId = "decor-divider"
+	repo = "android"
+	organization = "mercdev"
+	groupId = "com.mercdev.android"
+	version = "0.0.1"
+	vcsUrl = "https://github.com/rychagovD/DecorDivider.git"
+	license = "Apache-2.0"
+	docs = false
+	dryRun = false
+}
