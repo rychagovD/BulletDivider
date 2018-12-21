@@ -12,12 +12,12 @@ android {
 }
 
 bintrayUpload {
-	artifactId = "decor-divider"
+	artifactId = "bullet-divider"
 	repo = "android"
 	organization = "mercdev"
 	groupId = "com.mercdev.android"
 	version = "0.0.1"
-	vcsUrl = "https://github.com/rychagovD/DecorDivider.git"
+	vcsUrl = "https://github.com/rychagovD/BulletDivider.git"
 	license = "Apache-2.0"
 	docs = false
 	dryRun = false

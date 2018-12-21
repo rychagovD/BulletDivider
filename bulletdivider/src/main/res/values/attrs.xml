@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<declare-styleable name="BulletDivider">
+		<attr name="android:tint" />
+		<attr name="bullet_height" format="dimension" />
+		<attr name="bullet_distance" format="dimension" />
+		<attr name="bullet_big_width" format="dimension" />
+		<attr name="bullet_big_count" format="integer" />
+		<attr name="bullet_small_width" format="dimension" />
+		<attr name="bullet_small_count" format="integer" />
+	</declare-styleable>
+</resources>

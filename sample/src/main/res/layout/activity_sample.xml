@@ -7,18 +7,18 @@
 	android:layout_height="match_parent"
 	tools:context=".sample.SampleActivity">
 
-	<com.rychagovD.nickdivider.NickDivider
+	<com.rychagovD.bulletdivider.BulletDivider
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:tint="@color/colorAccent"
+		app:bullet_big_count="7"
+		app:bullet_distance="35dp"
+		app:bullet_height="4dp"
+		app:bullet_small_count="3"
+		app:bullet_small_width="4dp"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent"
-		app:nick_big_count="7"
-		app:nick_distance="35dp"
-		app:nick_height="4dp"
-		app:nick_small_count="3"
-		app:nick_small_width="4dp" />
+		app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

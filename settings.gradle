@@ -1,1 +1,1 @@
-include ':sample', ':nickdivider'
+include ':sample', ':bulletdivider'
