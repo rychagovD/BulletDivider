@@ -49,7 +49,7 @@ class BulletDivider(
     bulletRadius = bulletHeight / 2
     bulletBigWidth = typedArray.getDimensionPixelSize(R.styleable.BulletDivider_bullet_big_width, DEFAULT_WIDTH_BIG)
     bulletBigCount = typedArray.getInt(R.styleable.BulletDivider_bullet_big_count, DEFAULT_COUNT)
-    bulletBigDistance = typedArray.getDimensionPixelSize(R.styleable.BulletDivider_bullet_distance, DEFAULT_SPACE)
+    bulletBigDistance = typedArray.getDimensionPixelSize(R.styleable.BulletDivider_bullet_distance, DEFAULT_SPACE) - bulletHeight
     bulletSmallWidth = typedArray.getDimensionPixelSize(R.styleable.BulletDivider_bullet_small_width, DEFAULT_WIDTH_SMALL)
     bulletSmallCount = typedArray.getInt(R.styleable.BulletDivider_bullet_small_count, DEFAULT_COUNT)
     bulletSmallDistance = computeSmallDistance()

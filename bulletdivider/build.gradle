@@ -16,7 +16,7 @@ bintrayUpload {
 	repo = "android"
 	organization = "mercdev"
 	groupId = "com.mercdev.android"
-	version = "0.0.1"
+	version = "0.0.2"
 	vcsUrl = "https://github.com/rychagovD/BulletDivider.git"
 	license = "Apache-2.0"
 	docs = false
