@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<declare-styleable name="NickDivider">
+		<attr name="android:tint" />
+		<attr name="nick_height" format="dimension" />
+		<attr name="nick_big_width" format="dimension" />
+		<attr name="nick_small_width" format="dimension" />
+		<attr name="nick_big_max_count" format="integer" />
+		<attr name="nick_small_count" format="integer" />
+		<attr name="nick_distance" format="dimension" />
+	</declare-styleable>
+</resources>
