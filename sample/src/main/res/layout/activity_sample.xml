@@ -15,8 +15,10 @@
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
-		app:nick_big_max_count="7"
+		app:nick_big_count="7"
 		app:nick_distance="35dp"
-		app:nick_small_count="3" />
+		app:nick_height="4dp"
+		app:nick_small_count="3"
+		app:nick_small_width="4dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,16 +25,14 @@ class NickDivider(
   private val DEFAULT_WIDTH_BIG = 20.toPx()
   private val DEFAULT_WIDTH_SMALL = 10.toPx()
   private val DEFAULT_SPACE = 40.toPx()
-  private val DEFAULT_MAX_COUNT = 5
-  private val DEFAULT_COUNT = 0
+  private val DEFAULT_COUNT = 3
 
   private val tint: Int
   private val nickHeight: Int
   private val nickRadius: Int
   private val nickBigWidth: Int
   private val nickBigDistance: Int
-  private val nickBigMaxCount: Int
-  private var nickBigCount: Int = DEFAULT_COUNT
+  private val nickBigCount: Int
   private val nickSmallWidth: Int
   private val nickSmallDistance: Int
   private val nickSmallCount: Int
@@ -50,7 +48,7 @@ class NickDivider(
     nickHeight = typedArray.getDimensionPixelSize(R.styleable.NickDivider_nick_height, DEFAULT_HEIGHT)
     nickRadius = nickHeight / 2
     nickBigWidth = typedArray.getDimensionPixelSize(R.styleable.NickDivider_nick_big_width, DEFAULT_WIDTH_BIG)
-    nickBigMaxCount = typedArray.getInt(R.styleable.NickDivider_nick_big_max_count, DEFAULT_MAX_COUNT)
+    nickBigCount = typedArray.getInt(R.styleable.NickDivider_nick_big_count, DEFAULT_COUNT)
     nickBigDistance = typedArray.getDimensionPixelSize(R.styleable.NickDivider_nick_distance, DEFAULT_SPACE)
     nickSmallWidth = typedArray.getDimensionPixelSize(R.styleable.NickDivider_nick_small_width, DEFAULT_WIDTH_SMALL)
     nickSmallCount = typedArray.getInt(R.styleable.NickDivider_nick_small_count, DEFAULT_COUNT)
@@ -73,18 +71,8 @@ class NickDivider(
     val sizeWidth = View.MeasureSpec.getSize(widthMeasureSpec)
     val sizeHeight = View.MeasureSpec.getSize(heightMeasureSpec)
 
-    val maxContentHeight = nickBigMaxCount * (nickHeight + nickBigDistance) + nickHeight
-    nickBigCount = if (maxContentHeight > sizeHeight) {
-      sizeHeight / nickHeight
-    } else {
-      nickBigMaxCount
-    }
-
-    var resultWidth = nickBigWidth
-    var resultHeight = nickBigCount * (nickHeight + nickBigDistance) + nickHeight
-
-    resultWidth += paddingLeft + paddingRight
-    resultHeight += paddingTop + paddingBottom
+    var resultWidth = nickBigWidth + paddingLeft + paddingRight
+    var resultHeight = nickBigCount * (nickHeight + nickBigDistance) - nickBigDistance + paddingTop + paddingBottom
 
     resultWidth = measureSize(modeWidth, sizeWidth, resultWidth)
     resultHeight = measureSize(modeHeight, sizeHeight, resultHeight)
