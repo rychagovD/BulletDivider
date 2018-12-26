@@ -42,7 +42,7 @@ class BulletDivider(
   private val bulletSmallDistance: Int
   private val bulletSmallCount: Int
 
-  private val bulletAlignmentDx: Float
+  private val bulletSmallDx: Float
 
   private val bulletPaint: Paint
   private val bulletBigPath: Path
@@ -63,7 +63,7 @@ class BulletDivider(
     bulletSmallDistance = computeSmallDistance()
     typedArray.recycle()
 
-    bulletAlignmentDx = when (bulletAlignment) {
+    bulletSmallDx = when (bulletAlignment) {
       ALIGNMENT_LEFT -> 0f
       ALIGNMENT_RIGHT -> (bulletBigWidth - bulletSmallWidth).toFloat()
       else -> (bulletBigWidth - bulletSmallWidth) / 2f
@@ -74,8 +74,8 @@ class BulletDivider(
         colorFilter = PorterDuffColorFilter(tint, PorterDuff.Mode.SRC_IN)
         style = Paint.Style.FILL
       }
-    bulletBigPath = generateBigNick()
-    bulletSmallPath = generateSmallNick()
+    bulletBigPath = generateBigBullet()
+    bulletSmallPath = generateSmallBullet()
   }
 
   override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -99,6 +99,7 @@ class BulletDivider(
     val smallDistance = bulletSmallDistance.toFloat()
     val height = bulletHeight.toFloat()
 
+    // draw big bullets
     canvas.save()
     repeat(bulletBigCount) {
       canvas.drawPath(bulletBigPath, bulletPaint)
@@ -106,9 +107,10 @@ class BulletDivider(
     }
     canvas.restore()
 
+    // draw small bullets
     repeat(bulletBigCount - 1) { bigIndex ->
       canvas.save()
-      canvas.translate(bulletAlignmentDx, 0f)
+      canvas.translate(bulletSmallDx, 0f)
       canvas.translate(0f, bigIndex * bigDistance)
       canvas.translate(0f, (bigIndex + 1) * height)
 
@@ -127,13 +129,13 @@ class BulletDivider(
     return allSpace / (bulletSmallCount + 1)
   }
 
-  private fun generateBigNick(): Path {
+  private fun generateBigBullet(): Path {
     val rect = RectF(0f, 0f, bulletBigWidth.toFloat(), bulletHeight.toFloat())
     return Path()
       .apply { addRoundRect(rect, bulletRadius.toFloat(), bulletRadius.toFloat(), Path.Direction.CW) }
   }
 
-  private fun generateSmallNick(): Path {
+  private fun generateSmallBullet(): Path {
     val rect = RectF(0f, 0f, bulletSmallWidth.toFloat(), bulletHeight.toFloat())
     return Path()
       .apply { addRoundRect(rect, bulletRadius.toFloat(), bulletRadius.toFloat(), Path.Direction.CW) }
