@@ -4,6 +4,11 @@
 		<attr name="android:tint" />
 		<attr name="bullet_height" format="dimension" />
 		<attr name="bullet_distance" format="dimension" />
+		<attr name="bullet_alignment" format="enum">
+			<enum name="left" value="0" />
+			<enum name="center" value="1" />
+			<enum name="right" value="2" />
+		</attr>
 		<attr name="bullet_big_width" format="dimension" />
 		<attr name="bullet_big_count" format="integer" />
 		<attr name="bullet_small_width" format="dimension" />

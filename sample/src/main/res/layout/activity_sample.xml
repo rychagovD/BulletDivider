@@ -11,6 +11,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:tint="@color/colorAccent"
+		app:bullet_alignment="center"
 		app:bullet_big_count="7"
 		app:bullet_distance="35dp"
 		app:bullet_height="4dp"
